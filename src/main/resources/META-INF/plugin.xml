@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>com.neoforge.generator</id>
+    <name>NeoForge Generator</name>
+
+    <vendor>NeoForge Generator</vendor>
+
+    <description>
+        A powerful code and resource generator
+        for Minecraft NeoForge mod development.
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <actions>
+        <action
+                id="NeoForgeGenerator.GenerateResource"
+                class="com.neoforge.generator.actions.GenerateResourceAction"
+                text="Generate NeoForge Resource"
+                description="Generate a Minecraft resource">
+
+            <add-to-group
+                    group-id="ToolsMenu"
+                    anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
