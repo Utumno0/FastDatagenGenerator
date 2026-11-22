@@ -1,4 +1,3 @@
-
 package com.neoforge.generator.actions
 
 import com.intellij.openapi.actionSystem.AnAction
@@ -22,17 +21,6 @@ class GenerateResourceAction : AnAction() {
                 "NeoForge Generator"
             )
             return
-        }
-
-        val wizard = BlockWizard(project)
-        if (wizard.showAndGet()) {
-            val data = wizard.getBlockData()
-
-            Messages.showInfoMessage(
-                project,
-                "Block: ${data.blockName}\nRegistry: ${data.registryName}",
-                "Block Information"
-            )
         }
 
         val registries = RegistryDetector().detect(project)
@@ -107,5 +95,16 @@ class GenerateResourceAction : AnAction() {
             "Registration Analysis",
             null
         )
+
+        val wizard = BlockWizard(project)
+        if (wizard.showAndGet()) {
+            val data = wizard.getBlockData()
+
+            Messages.showInfoMessage(
+                project,
+                "Block: ${data.blockName}\nRegistry: ${data.registryName}",
+                "Block Information"
+            )
+        }
     }
 }

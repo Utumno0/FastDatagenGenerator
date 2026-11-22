@@ -1,4 +1,3 @@
-
 plugins {
     kotlin("jvm") version "2.3.20"
     id("org.jetbrains.intellij.platform") version "2.20.1"
@@ -16,6 +15,7 @@ repositories {
 }
 
 dependencies {
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.18.3")
     intellijPlatform {
         intellijIdea("2026.1.4")
 
